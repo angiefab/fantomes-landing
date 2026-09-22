@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fantômes — Débusque les abonnements qu'on paie sans s'en servir</title>
+<meta name="description" content="On lit ton relevé bancaire, on repère les prélèvements que tu ne remarques plus, et on te prépare la lettre pour les arrêter. 19€, sans abonnement." />
+
+<meta property="og:title" content="Fantômes — Débusque les abonnements qu'on paie sans s'en servir" />
+<meta property="og:description" content="On lit ton relevé bancaire, on repère les prélèvements que tu ne remarques plus, et on te prépare la lettre pour les arrêter. 19€, sans abonnement." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --nuit: #1B2A4A;
+    --corail: #E8724C;
+    --creme: #FAF6F0;
+    --creme-fonce: #EFE7DB;
+    --texte: #23262B;
+    --texte-doux: #5B5F6B;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--creme);
+    color: var(--texte);
+    font-family: 'Public Sans', system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  header.hero {
+    background: var(--nuit);
+    color: var(--creme);
+    padding: 48px 0 56px;
+  }
+  .eyebrow {
+    font-size: 15px;
+    color: #B9C2D6;
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    max-width: 15ch;
+  }
+  .hero p.lead {
+    font-size: 17px;
+    color: #D9DEEA;
+    max-width: 42ch;
+    margin: 0 0 32px;
+  }
+  .cta {
+    display: block;
+    text-align: center;
+    background: var(--corail);
+    color: #fff;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 17px 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+  }
+  .cta:active { transform: translateY(1px); box-shadow: none; }
+  .cta-sub {
+    text-align: center;
+    font-size: 13px;
+    color: #A8B1C4;
+    margin: 12px 0 0;
+  }
+
+  section.douleur {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--creme-fonce);
+  }
+  section.douleur p {
+    font-size: 18px;
+    max-width: 34ch;
+  }
+  section.douleur .calcul {
+    margin-top: 18px;
+    font-size: 15px;
+    color: var(--texte-doux);
+    border-left: 2px solid var(--corail);
+    padding-left: 14px;
+  }
+
+  section.etapes {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--creme-fonce);
+  }
+  section.etapes h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0 0 28px;
+  }
+  .etape {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid var(--creme-fonce);
+  }
+  .etape:first-of-type { border-top: none; }
+  .etape .num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--corail);
+    flex: none;
+    width: 28px;
+  }
+  .etape h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .etape p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--texte-doux);
+  }
+
+  section.prix {
+    padding: 44px 0 56px;
+  }
+  .carte-prix {
+    background: var(--nuit);
+    color: var(--creme);
+    border-radius: 10px;
+    padding: 28px 24px;
+  }
+  .carte-prix .montant {
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    margin: 0;
+  }
+  .carte-prix .montant span {
+    font-size: 16px;
+    font-family: 'Public Sans', sans-serif;
+    color: #A8B1C4;
+    font-weight: 400;
+  }
+  .carte-prix p.detail {
+    color: #D9DEEA;
+    font-size: 15px;
+    margin: 8px 0 24px;
+  }
+
+  footer {
+    padding: 28px 0 48px;
+    font-size: 13px;
+    color: var(--texte-doux);
+  }
+  footer a { color: var(--texte-doux); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Fantômes</p>
+    <h1>Tu paies encore pour des services que tu n'utilises plus</h1>
+    <p class="lead">Envoie ton relevé bancaire. On repère les prélèvements récurrents que tu ne remarques plus, et on prépare tout pour les arrêter.</p>
+    <a class="cta" href="https://buy.stripe.com/test_fZu8wI5IZgHf23F8sr9Zm00">Recevoir mon audit — 19€</a>
+    <p class="cta-sub">Paiement sécurisé par Stripe. Sans abonnement.</p>
+  </div>
+</header>
+
+<section class="douleur">
+  <div class="wrap">
+    <p>Un essai jamais résilié, un abonnement remplacé, une option activée une fois. Seuls, chacun est trop petit pour qu'on le remarque sur un relevé. Ensemble, ils tournent pendant des années.</p>
+    <p class="calcul">8€ par mois oublié, c'est 96€ par an. Trois abonnements comme ça, c'est déjà un mois de courses qui part sans que tu en profites.</p>
+  </div>
+</section>
+
+<section class="etapes">
+  <div class="wrap">
+    <h2>Comment ça marche</h2>
+    <div class="etape">
+      <span class="num">1</span>
+      <div>
+        <h3>Tu envoies ton relevé</h3>
+        <p>Le PDF ou l'export de ta banque des trois derniers mois suffit.</p>
+      </div>
+    </div>
+    <div class="etape">
+      <span class="num">2</span>
+      <div>
+        <h3>Tu reçois le total réel</h3>
+        <p>Chaque prélèvement récurrent, classé par ce qu'il te coûte sur l'année — pas par mois, pour que ça pèse pour de vrai.</p>
+      </div>
+    </div>
+    <div class="etape">
+      <span class="num">3</span>
+      <div>
+        <h3>Tu résilies en deux minutes</h3>
+        <p>Une lettre de résiliation prête pour chaque abonnement que tu veux arrêter. Tu n'as qu'à l'envoyer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prix">
+  <div class="wrap">
+    <div class="carte-prix">
+      <p class="montant">19€ <span>paiement unique</span></p>
+      <p class="detail">Ton audit complet, livré par email. Aucun engagement, aucun abonnement caché — ce serait mal venu, vu ce qu'on fait.</p>
+      <a class="cta" href="https://buy.stripe.com/test_fZu8wI5IZgHf23F8sr9Zm00">Recevoir mon audit — 19€</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Fantômes — [Raison sociale à compléter], [SIRET à compléter]. Paiement traité par Stripe.</p>
+  </div>
+</footer>
+
+</body>
+</html>
